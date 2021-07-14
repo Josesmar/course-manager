@@ -1,5 +1,5 @@
 export class Course {
-    id: number =0;
+    id: number = 0;
     name: String ="";
     imageUrl: string ="";
     price: number =0;

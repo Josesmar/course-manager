@@ -8,13 +8,29 @@ import { CourseService } from "./course-service";
     templateUrl: './course-list.component.html'
 })
 export class CourseListComponent implements OnInit{
-    courses: Course[] = [];
 
+    filteredCourses: Course[] = [];
+
+    _courses: Course[] = [];
+
+    _filterBy: string ="";
+    
+    
     //Gerando uma instância com os mesmo objeto
     constructor(private courseService: CourseService){}
 
     ngOnInit(): void{ //ao utilizar o implements Oninit é obrigatório a criação desse Método ngOnInit
-        this.courses = this.courseService.retrieveAll();
+        this._courses = this.courseService.retrieveAll();
+        this.filteredCourses = this._courses;
+    }
 
+    set filter(value: string) {
+        this._filterBy = value;
+
+        this.filteredCourses = this._courses.filter((course: Course) => course.name.toLocaleLowerCase().indexOf(this._filterBy.toLocaleLowerCase()) > -1);
+    }
+
+    get filter(){
+        return this._filterBy;
     }
 }
