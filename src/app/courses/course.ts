@@ -6,6 +6,10 @@ export class Course {
     code: string ="";
     duration: number =0;
     rating: number = 0;
+<<<<<<< Updated upstream
     description: String = "";
+=======
+    description: string = "";
+>>>>>>> Stashed changes
     releaseDate: string ="";
 }
