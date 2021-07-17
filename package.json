@@ -1,6 +1,13 @@
 {
   "name": "course-manager",
   "version": "1.0.0",
+<<<<<<< Updated upstream
+=======
+  "engines": {
+    "node": "14.17.0",
+    "npm": "6.4.1"
+  },
+>>>>>>> Stashed changes
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -22,6 +29,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "bootstrap": "^5.0.2",
+    "express": "^4.17.1",
     "font-awesome": "^4.7.0",
     "peer": "^0.6.1",
     "rxjs": "~6.6.0",
@@ -45,4 +53,5 @@
     "rollup": "^1.32.1",
     "typescript": "~4.3.2"
   }
+  
 }
