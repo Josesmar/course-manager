@@ -9,6 +9,7 @@ import { ReplacePipe } from './pipe/replace.pepe';
 
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { Erro404Component } from './erro404/erro-404.component';
+import { CourseInfoComponent } from './courses/course-info.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { Erro404Component } from './erro404/erro-404.component';
     ReplacePipe,
     StarComponent,
     NavBarComponent,
-    Erro404Component
+    Erro404Component,
+    CourseInfoComponent
   ],
   imports: [
     BrowserModule, 
@@ -24,13 +26,16 @@ import { Erro404Component } from './erro404/erro-404.component';
 
     //Definição de rotas
     RouterModule.forRoot([ //Esse forRoot espera um array
-      {        
-        //Na raiz da aplicação será adicionado o courses, ou seja, após o localhost:4200
-        path: '', redirectTo: 'courses', pathMatch: 'full'
-      },
       {
         path: 'courses', component: CourseListComponent
       },       
+      {
+        path: 'courses/info/:id', component: CourseInfoComponent
+      },       
+      {        
+        //Na raiz da aplicação será adicionado o courses, ou seja, após o localhost:4200
+        path: '', redirectTo: 'courses', pathMatch: 'full'
+      },      
       {//Quando a rota não é encontrada
         path: '**', component: Erro404Component
       }
