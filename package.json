@@ -1,14 +1,14 @@
 {
   "name": "course-manager",
   "version": "0.0.0",
-  " scripts ": {
-    " ng ": " ng ",
-    " start ": " node server.js ",
-    " build ": " ng build ",
-    " test ": " teste ng ",
-    " lint ": " ng lint ",
-    " e2e ": " ng e2e ",
-    " heroku-postbuild ": " ng build --prod "
+  "scripts ": {
+    "ng ": "ng ",
+    "start ": "node server.js",
+    "build ": "ng build",
+    "test ": "teste ng",
+    "lint ": "ng lint",
+    "e2e ": "ng e2e",
+    "heroku-postbuild ": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -33,8 +33,7 @@
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4",
-	" typescript " : " ~ 3.9.5 "   
-     
+    "typescript": "~4.3.2"
 	
   },
   "devDependencies": {
@@ -52,18 +51,18 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
     "rollup": "^1.32.1",
-    "@ types / jasminewd2 " :" ~ 2.0.3 " ,
-    " codelyzer " : " ^ 6.0.0 " ,     
-    " jasmine-spec-reporter " : " ~ 5.0.0 " ,	 
-    "carma-cobertura-istanbul-repórter " : "~ 3.0.2 " ,     
-    "transferidor " : " ~ 7.0.0 ",
-    "ts- node " : " ~ 8.3.0 ",
-    "tslint " : " ~ 6.1.0 ",
+    "@types/jasminewd2 " :"~2.0.3",
+    "codelyzer " : "^6.0.0 ",     
+    "jasmine-spec-reporter " : "~5.0.0",	 
+    "carma-cobertura-istanbul-repórter " : "~3.0.2",
+    "transferidor" :"~7.0.0",
+    "ts-node " : "~8.3.0",
+    "tslint " : "~6.1.0",
     "typescript": "~4.3.2"	
 	
   },
-  " engines ": {
-    " node ": " 14.17.0 ",
-    " npm ": " 7.19.1 "
+    "engines": {
+    "node": "14.17.0",
+    "npm": "7.19.1"
   }
 }
