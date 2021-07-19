@@ -1,11 +1,11 @@
-export class Course {
+export class Course { 
     id: number;
-    name: String;
+    name: string;
     imageUrl: string;
     price: number;
     code: string;
     duration: number;
-    rating: number;    
-    description: string;
+    rating: number;
     releaseDate: string;
+    description: string;
 }

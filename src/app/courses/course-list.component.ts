@@ -1,36 +1,52 @@
-import { Template } from "@angular/compiler/src/render3/r3_ast";
-import { Component, OnInit } from "@angular/core";
-import { Course } from "./course";
-import { CourseService } from "./course-service";
+import { Component, OnInit } from '@angular/core';
+import { Course } from './course';
+import { CourseService } from './course.service';
 
 @Component({
-    // selector: 'app-course-list', //Vai virar uma tag e ser usando em outro compomente
     templateUrl: './course-list.component.html'
 })
-export class CourseListComponent implements OnInit{
+export class CourseListComponent implements OnInit { 
 
     filteredCourses: Course[] = [];
 
     _courses: Course[] = [];
-
-    _filterBy: string ="";
     
-    
-    //Gerando uma instância com os mesmo objeto
-    constructor(private courseService: CourseService){}
+    _filterBy: string;
 
-    ngOnInit(): void{ //ao utilizar o implements Oninit é obrigatório a criação desse Método ngOnInit
-        this._courses = this.courseService.retrieveAll();
-        this.filteredCourses = this._courses;
+    constructor(private courseService: CourseService) { }
+
+    ngOnInit(): void { 
+        this.retrieveAll();
     }
 
-    set filter(value: string) {
+    retrieveAll(): void { 
+        this.courseService.retrieveAll().subscribe({
+            next: courses => {
+                this._courses = courses;
+                this.filteredCourses = this._courses;
+            },
+            error: err => console.log('Error', err) 
+        })
+    }
+
+    deleteById(courseId: number): void { 
+        this.courseService.deleteById(courseId).subscribe({
+            next: () => { 
+                console.log('Deleted with success');
+                this.retrieveAll();
+            },
+            error: err => console.log('Error', err)
+        })
+    }
+
+    set filter(value: string) { 
         this._filterBy = value;
 
         this.filteredCourses = this._courses.filter((course: Course) => course.name.toLocaleLowerCase().indexOf(this._filterBy.toLocaleLowerCase()) > -1);
     }
 
-    get filter(){
+    get filter() { 
         return this._filterBy;
     }
+
 }
